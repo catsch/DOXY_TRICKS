@@ -1,1 +1,10 @@
 
+#!/bin/sh
+
+EDAC_DATA="/data2/DM/EDAC/coriolis/" 
+
+mission="1902605"
+
+ls -1 ${EDAC_DATA}${mission}"/profiles/"B*.nc | grep -v D.nc > liste_all_B
+
+R --vanilla < change_QC_at_surface.R
